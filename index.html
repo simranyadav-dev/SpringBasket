@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Basket</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+<div class="logo">🌸 Spring Basket </div>
+<div class="nav-controls">
+<div class="theme-dropdown" id="themeDropdown">
+<button class="theme-dropdown-btn" onclick="toggleThemeDropdown()">🎨 Theme <span class="dropdown-arrow">▼</span>
+</button>
+<div class="theme-dropdown-content">
+    <div class="theme-option" data-theme="default" onclick="changeTheme('default')">
+    <div class="theme-preview"></div>
+    <span>Spring Default</span>
+</div>
+<div class="theme-option" data-theme="pastel-pink" onclick="changeTheme('pastel-pink')">
+    <div class="theme-preview"></div>
+    <span>Pastel Pink</span>
+</div>
+<div class="theme-option" data-theme="pastel-blue" onclick="changeTheme('pastel-blue')">
+    <div class="theme-preview"></div>
+    <span>Pastel Blue</span>
+</div>
+<div class="theme-option" data-theme="pastel-lavender" onclick="changeTheme('pastel-lavender')">
+    <div class="theme-preview"></div>
+    <span>Pastel Lavender</span>
+</div>
+<div class="theme-option" data-theme="pastel-mint" onclick="changeTheme('pastel-mint')">
+    <div class="theme-preview"></div>
+    <span>Pastel Mint</span>
+</div>
+<div class="theme-option" data-theme="beige-warm" onclick="changeTheme('beige-warm')">
+    <div class="theme-preview"></div>
+    <span>Warm Beige</span>
+</div>
+<div class="theme-option" data-theme="beige-cream" onclick="changeTheme('beige-cream')">
+    <div class="theme-preview"></div>
+    <span>Cream Beige</span>
+</div>
+<div class="theme-option" data-theme="beige-sand" onclick="changeTheme('beige-sand')">
+    <div class="theme-preview"></div>
+    <span>Sand Beige</span>
+</div>
+</div>
+</div>
+<button class="theme-toggle" onclick="toggleDarkMode()">🌙 Dark </button>
+</div>
+</header>
+
+    <div class="container">
+        <!-- Welcome Page -->
+        <div class="page active" id="welcomePage">
+            <div class="welcome-card">
+                <h1 class="welcome-title">🧺 Spring Basket</h1>
+                <p class="welcome-subtitle">Navigate your basket through the beautiful spring landscape and collect blue balls while avoiding obstacles!</p>
+                <button class="btn" onclick="startGame()">🎮 Start Game</button>
+                <button class="btn" onclick="showInstructions()">📖 How to Play</button>
+            </div>
+        </div>
+
+        <!-- Instructions Page -->
+        <div class="page" id="instructionsPage">
+            <div class="instructions-card">
+                <h2 class="welcome-title">📖 How to Play</h2>
+                <ul class="instructions-list">
+                    <li>🧺 Control your basket using mouse movement or touch</li>
+                    <li>💙 Collect blue balls to increase your score</li>
+                    <li>🚫 Avoid red obstacles - they'll end your game</li>
+                    <li>⚡ Speed increases every 30 points</li>
+                    <li>🌸 Beautiful spring scenes change every 40 points</li>
+                    <li>🏆 Try to beat your high score!</li>
+                </ul>
+                <button class="btn" onclick="startGame()">🎮 Play Now</button>
+                <button class="btn" onclick="showWelcome()">← Back to Welcome</button>
+            </div>
+        </div>
+
+        <!-- Game Page -->
+        <div class="page" id="gamePage">
+            <div class="game-container">
+                <div class="game-header">
+                    <div>Score: <span id="score">0</span></div>
+                    <div>High Score: <span id="highScore">0</span></div>
+                    <div>Speed: <span id="speed">1</span>x</div>
+                </div>
+                <div style="position: relative;">
+                    <canvas id="gameCanvas" width="800" height="500"></canvas>
+                    <div class="scene-indicator" id="sceneIndicator">Spring Garden 🌸</div>
+                    <div class="game-over-overlay" id="gameOverOverlay">
+                        <div class="game-over-title">Game Over!</div>
+                        <div class="final-score" id="finalScore">Final Score: 0</div>
+                        <button class="btn" onclick="restartGame()">🔄 Play Again</button>
+                        <button class="btn" onclick="showWelcome()">🏠 Main Menu</button>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <p>Move your mouse or touch to control the basket</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Spring Basket . Made by <a href="">SIMRAN YADAV</a> . All rights reserved.</p>
+        <p>Enjoy this spring-themed adventure game! 🌸</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
