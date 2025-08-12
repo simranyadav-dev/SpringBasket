@@ -1,5 +1,6 @@
 # SpringBasket
 
+ A fun mini game . To collect balls. 
 ---
 ## Live Demo
 
